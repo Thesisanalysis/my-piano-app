@@ -1,0 +1,71 @@
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.piano-container {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    width: 800px; /* Adjust width for multiple octaves */
+    height: 250px;
+}
+.key {
+    position: relative;
+    border: 1px solid black;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    border-radius: 0 0 5px 5px;
+    transition: all 0.1s ease;
+}
+.key.white {
+    width: 50px;
+    height: 200px;
+    background-color: white;
+    margin-right: 5px;
+}
+.key.black {
+    width: 30px;
+    height: 120px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0 -15px;
+}
+/* Positioning for black keys in a three-octave layout */
+.key[data-note="Db3"] { left: 40px; }
+.key[data-note="Eb3"] { left: 95px; }
+.key[data-note="Gb3"] { left: 180px; }
+.key[data-note="Ab3"] { left: 235px; }
+.key[data-note="Bb3"] { left: 290px; }
+
+.key[data-note="Db4"] { left: 375px; }
+.key[data-note="Eb4"] { left: 430px; }
+.key[data-note="Gb4"] { left: 515px; }
+.key[data-note="Ab4"] { left: 570px; }
+.key[data-note="Bb4"] { left: 625px; }
+
+.key[data-note="Db5"] { left: 710px; }
+.key[data-note="Eb5"] { left: 765px; }
+.key[data-note="Gb5"] { left: 850px; }
+.key[data-note="Ab5"] { left: 905px; }
+.key[data-note="Bb5"] { left: 960px; }
+
+/* Effects when a key is pressed */
+.key:active.white {
+    background-color: #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transform: translateY(2px);
+}
+.key:active.black {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transform: translateY(2px);
+}
